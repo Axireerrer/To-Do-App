@@ -1,0 +1,74 @@
+{% extends 'todo/base.html' %}
+
+{% block title %}
+    <div class="head-items">
+        <h1>
+            Менеджер задач
+            <a href="{% url 'users:logout' %}"> Выйти </a>
+        </h1>
+    </div>
+
+{% endblock %}
+
+
+
+{% block content %}
+
+
+ <!-- Форма для title -->
+<div class="title">
+    <form method="post" action="">
+        {% csrf_token %}
+            <label for="title"> <h2 style="text-align:center;"> Добавить задачу: </h2> </label>
+                <p style="text-align:center;"><input type="text" name="title" id="title">
+                <button type="submit" class="title_but"> Добавить </button>
+                </p>
+    </form>
+</div>
+<!-- Форма для title -->
+
+<!-- Формы для управления задачами -->
+    <div class="tasks_block">
+    {% for item in items %}
+        <div class="task">
+            <p>  <h2 style="text-align:left;"> {{ item.title }} </h2> </p>
+            {% if item.is_completed == False %}
+            <form action="" method="post" style="text-align:left;">
+                {% csrf_token %}
+                <div class="btn">
+                    <button type="submit" style="background-color:red; width: 120px;" name="update" value="{{ item.id }}"> Не завершено </button>
+                    <button type="submit" style="background-color:#FF0000;" name="delete" value="{{ item.id }}"> Удалить </button>
+                    <button type="submit" name="user" style="background-color:#6699FF">
+                        <input type="hidden" name="task_id" value="{{ item.id }}">
+                        {% if item.user %}
+                            {{ item.user }}
+                        {% else %}
+                            Выбрать исполнителя:
+                        {% endif %}
+                    </button> {{ form.user }}
+                </div>
+            </form>
+            {% else %}
+            <form action="" method="post" style="text-align:left;">
+                {% csrf_token %}
+                <div class="btn">
+                    <button type="submit" style="background-color:#00FF00; width: 120px;" name="update" value="{{ item.id }}"> Завершено </button>
+                    <button type="submit" style="background-color:#FF0000;" name="delete" value="{{ item.id }}"> Удалить </button>
+                    <button type="submit" name="user" style="background-color:#6699FF">
+                        <input type="hidden" name="task_id" value="{{ item.id }}">
+                        {% if item.user %}
+                            {{ item.user }}
+                        {% else %}
+                            Выбрать исполнителя:
+                        {% endif %}
+                    </button> {{ form.user }}
+                </div>
+            </form>
+        </div>
+        {% endif %}
+    {% endfor %}
+    </div>
+<!-- Формы для управления задачами -->
+
+
+{% endblock %}

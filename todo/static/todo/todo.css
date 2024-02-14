@@ -1,0 +1,113 @@
+body {
+    background-image: linear-gradient(to right, #FFEFBA, #FFFFFF);
+    color: black;
+    margin: 0;
+    padding: 0;
+}
+
+
+.header {
+
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #D3CBB8;
+    color: white;
+    border: 2px white;
+}
+
+
+
+.title {
+    margin-top: 80px;
+    box-shadow: 2px 2px 8px black;
+    border-radius: 40px;
+    margin-left: 540px;
+    margin-right: 520px;
+    padding: 6px 6px 6px 6px;
+    color: black;
+    background-color: white;
+}
+
+
+.tasks_block {
+    margin-top: 50px;
+    box-shadow: 2px 2px 8px black;
+    border-radius: 60px;
+    margin-left: 540px;
+    margin-right: 520px;
+    padding: 10px 10px 30px 40px;
+    color: black;
+    background-color: white;
+    margin-bottom: 50px;
+
+
+}
+
+
+.btn button {
+
+    padding-top: 4px;
+    padding-bottom: 4px;
+    border-radius: 20px;
+}
+
+
+.task {
+    box-shadow: 2px inset;
+}
+
+
+.title_but {
+    padding-top: 4px;
+    padding-bottom: 4px;
+    border-radius: 20px;
+    background: #00FF00;
+}
+
+
+.title input {
+    box-shadow: 1px 1px 4px white inset;
+    border-radius: 20px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+
+.form {
+    text-align: center;
+    margin-top: 120px;
+
+}
+
+
+.form-input {
+    border-radius: 20px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+
+.reg-btn {
+    margin-top: 10px;
+    border-radius: 20px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    background-color: white;
+    color:  black;
+}
+
+
+.head-items h1 {
+    display: flex;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    margin-left: 650px;
+}
+
+.head-items a {
+    display: flex;
+    color: white;
+    text-decoration: none;
+    margin-left: 400px;
+}

@@ -1,0 +1,26 @@
+{% extends 'todo/base.html' %}
+
+
+{% block title %}
+<div class="head-items">
+        <h1>
+            Авторизация
+            <a href="{% url 'users:register' %}"> Регистрация </a>
+        </h1>
+    </div>
+{% endblock %}
+
+
+{% block content %}
+    <div class="form">
+       <form action="" method="post" enctype="multipart/form-data">
+           {% csrf_token %}
+           {% for f in form %}
+           <label> <h3> {{ f.label_tag }} </h3> </label>
+                <p> {{ f }} </p>
+                <p> {{ f.errors }} </p>
+           {% endfor %}
+           <button type="submit" class="reg-btn">  Отправить  </button>
+       </form>
+    </div>
+{% endblock %}
